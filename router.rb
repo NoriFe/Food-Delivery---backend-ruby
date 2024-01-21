@@ -21,6 +21,7 @@ class Router
     puts ""
     puts "What is the next step?"
     puts "1 - List of all meals"
+    puts "2 - Add a meal"
     puts "0 - Exit" 
     puts ""
     puts "##########################"   
@@ -30,6 +31,7 @@ class Router
   def action(choice)
     case choice
     when 1 then @meals_controller.list
+    when 2 then @meals_controller.add
     when 0 then @running = false
     else
         puts "Do it agian"

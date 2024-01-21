@@ -17,7 +17,7 @@ class MealRepository
   def create(meal)
     meal.id = @next_id
     @meals << meal
-    next_id += 1
+    next_id =+ 1
     save_scv
   end
 
@@ -26,7 +26,7 @@ class MealRepository
   def save_scv
     CSV.open(@csv_file, 'wb') do |csv|
       csv << ["id", "name", "price"]
-      @meals << do |meal|
+      @meals.each do |meal|
         csv << [meal.id, meal.name, meal.price]
       end
     end
