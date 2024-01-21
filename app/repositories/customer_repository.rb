@@ -35,7 +35,7 @@ class CustomerRepository
   def load_csv
     CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
       row[:id] = row[:id].to_i
-      row[:address] = row[:address].to_i
+      row[:address] = row[:address]
       @customers << Customer.new(row)
     end    
     @next_id = @customers.last.id + 1 unless @customers.empty?
