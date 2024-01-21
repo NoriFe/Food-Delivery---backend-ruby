@@ -5,5 +5,5 @@ require_relative "./repositories/meal_repository.rb"
 
 # p meal
 
-meal_repo = MealsRepository.new(File.join(__dir__,'/data/meals.csv'))
+meal_repo = MealRepository.new(File.join(__dir__,'/data/meals.csv'))
 p meal_repo
