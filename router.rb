@@ -8,7 +8,8 @@ class Router
   
   def run
     while @running
-    choice = display_menu   
+    choice = display_menu
+    system('clear') || system('cls')
     action(choice)
     end
   end
